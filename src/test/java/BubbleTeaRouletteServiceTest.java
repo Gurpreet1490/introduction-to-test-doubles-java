@@ -23,4 +23,17 @@ public class BubbleTeaRouletteServiceTest {
         assertEquals(expectedResult, actualResult);
 
     }
+
+    @Test
+    public void shouldGenerateARandomPeachIceTeaWhenGetRandomBubbleTeaTypeIsCalled() {
+
+        RandomStub randomStub = new RandomStub(BubbleTeaTypeEnum.PeachIceTea.ordinal());
+        BubbleTeaRouletteService bubbleTeaRouletteService = new BubbleTeaRouletteService(randomStub);
+
+        var actualResult = bubbleTeaRouletteService.getRandomBubbleTeaType();
+        var expectedResult = BubbleTeaTypeEnum.PeachIceTea;
+
+        assertEquals(expectedResult, actualResult);
+
+    }
 }
